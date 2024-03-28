@@ -6,11 +6,7 @@ class Attraction {
   final String nom;
   final String description;
 
-  const Attraction(
-      {required this.id,
-      required this.parcId,
-      required this.nom,
-      required this.description});
+  const Attraction({required this.id, required this.parcId, required this.nom, required this.description});
 
   factory Attraction.fromJson(Map<String, dynamic> json) {
     return switch (json) {
@@ -31,8 +27,7 @@ class Attraction {
   }
 
   static List<Attraction> parseAttractions(String responseBody) {
-    final parsed =
-        (jsonDecode(responseBody) as List).cast<Map<String, dynamic>>();
+    final parsed = (jsonDecode(responseBody) as List).cast<Map<String, dynamic>>();
 
     return parsed.map<Attraction>((json) => Attraction.fromJson(json)).toList();
   }

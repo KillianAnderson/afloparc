@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_aflo_park/attractions.dart';
+import 'package:real_aflo_park/form.dart';
 
 class Detail extends StatelessWidget {
   const Detail({super.key, required this.attraction});
@@ -22,7 +23,14 @@ class Detail extends StatelessWidget {
                 children: [
                   Text('${attraction.nom}', style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6), fontSize: 25)),
                   Text('${attraction.description}',
-                      style: TextStyle(color: Color.fromRGBO(48, 112, 223, 0.6), fontSize: 12))
+                      style: TextStyle(color: Color.fromRGBO(48, 112, 223, 0.6), fontSize: 12)),
+                  GestureDetector(
+                    child: Icon(Icons.create),
+                    onTap: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => FormDemo(attraction2: attraction)));
+                    },
+                  ),
                 ],
               ))),
     );

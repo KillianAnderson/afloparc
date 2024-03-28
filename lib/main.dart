@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:real_aflo_park/attractions.dart';
+import 'package:real_aflo_park/navbar.dart';
 import 'package:real_aflo_park/detail.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(NavigationBarApp());
 }
 
 class MyApp extends StatefulWidget {
